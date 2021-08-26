@@ -12,7 +12,7 @@ func main() {
         node1, err := hcloud.NewServer(ctx, "node1", &hcloud.ServerArgs{
             Image:      pulumi.String("debian-9"),
             ServerType: pulumi.String("cx11"),
-            Datacenter: pulumi.String("fsn1-dc8"),
+            Location:   pulumi.String("nbg1"),
         })
         if err != nil {
             return err
