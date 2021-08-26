@@ -13,6 +13,11 @@ func main() {
             Image:      pulumi.String("debian-9"),
             ServerType: pulumi.String("cx11"),
             Location:   pulumi.String("nbg1"),
+            UserData:   pulumi.String(`
+#!/bin/bash -v
+apt-get update
+apt-get install -y nginx
+`),
         })
         if err != nil {
             return err
@@ -31,6 +36,7 @@ func main() {
         if err != nil {
             return err
         }
+        ctx.Export("publicIp", node1.Ipv4Address)
         return nil
     })
 }
