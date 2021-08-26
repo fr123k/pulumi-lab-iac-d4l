@@ -1,0 +1,15 @@
+image:
+  file: .gitpod/Dockerfile
+tasks:
+  - init: |
+      go mod init
+      go build
+    command: |
+      pulumi version
+      pulumi plugin install resource hcloud 1.3.0
+      pulumi login --local
+      pulumi stack select -c pulumi-lab-iac-d4l
+      pulumi up
+vscode:
+  extensions:
+    - golang.go

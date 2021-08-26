@@ -1,0 +1,5 @@
+name: pulumi-lab-iac-d4l
+runtime:
+  name: go
+description: 
+template:
