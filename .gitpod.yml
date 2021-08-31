@@ -6,6 +6,7 @@ tasks:
       go build
       pulumi plugin install resource hcloud 1.3.0
     command: |
+      go test .
       pulumi version
       pulumi login --local
       pulumi stack select -c pulumi-lab-iac-d4l
