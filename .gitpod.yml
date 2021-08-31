@@ -4,12 +4,17 @@ tasks:
   - init: |
       go mod tidy
       go build
-    command: |
-      pulumi version
       pulumi plugin install resource hcloud 1.3.0
       pulumi login --local
       pulumi stack select -c pulumi-lab-iac-d4l
+    command: |
+      pulumi version
       pulumi up
+
+github:
+  prebuilds:
+    master: true
+
 vscode:
   extensions:
     - golang.go
