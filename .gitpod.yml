@@ -2,7 +2,6 @@ image:
   file: .gitpod/Dockerfile
 tasks:
   - init: |
-      go mod init github.com/fr123k/pulumi-lab-iac-d4l
       go mod tidy
       go build
     command: |
