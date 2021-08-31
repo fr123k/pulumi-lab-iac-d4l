@@ -5,10 +5,10 @@ tasks:
       go mod tidy
       go build
       pulumi plugin install resource hcloud 1.3.0
-      pulumi login --local
-      pulumi stack select -c pulumi-lab-iac-d4l
     command: |
       pulumi version
+      pulumi login --local
+      pulumi stack select -c pulumi-lab-iac-d4l
       pulumi up
 
 github:
